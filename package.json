@@ -1,0 +1,36 @@
+{
+  "name": "newscenter",
+  "version": "1.0.0",
+  "description": "NewsCenter video",
+  "scripts": {
+    "start": "remotion preview src/index.tsx",
+    "build": "remotion render src/index.tsx quotes out/quotes.mp4 --concurrency=1",
+    "upgrade": "remotion upgrade",
+    "test": "eslint src --ext ts,tsx,js,jsx && tsc"
+  },
+  "dependencies": {
+    "@remotion/cli": "3.2.22",
+    "@remotion/eslint-plugin": "^3.2.3",
+    "animate.css": "^4.1.1",
+    "autoprefixer": "^10.4.8",
+    "axios": "^0.27.2",
+    "cli-progress": "^3.11.2",
+    "eslint": "^8.14.0",
+    "heroicons": "^2.0.13",
+    "moment": "^2.29.4",
+    "postcss": "^8.4.16",
+    "postcss-loader": "^7.0.1",
+    "postcss-preset-env": "^7.8.0",
+    "prettier": "^2.2.1",
+    "react": "^18.0.0",
+    "react-dom": "^18.0.0",
+    "react-icons": "^4.6.0",
+    "remotion": "3.2.22",
+    "tailwindcss": "^3.1.8",
+    "typescript": "^4.6.3"
+  },
+  "devDependencies": {
+    "@types/react": "^18.0.6",
+    "@types/web": "^0.0.61"
+  }
+}
