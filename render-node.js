@@ -21,8 +21,8 @@ const start = async () => {
 
   const inputProps = {
     fileData: JSON.stringify(data),
-    musicIndex: 69,
-    videoIndex: 8,
+    musicIndex: 170,
+    videoIndex: 24,
   };
   console.log(inputProps);
 

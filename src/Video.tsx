@@ -49,7 +49,7 @@ export const RemotionVideo: React.FC = () => {
 
   // Generate random background video index
   const generateRandomVideoIndex = useCallback(() => {
-    let number = getRandom(1, 30);
+    let number = getRandom(1, 25);
     settingValues(VIDEO_INDEX, setVideoIndex, number);
   }, [handle]);
 
