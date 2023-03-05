@@ -1,71 +1,69 @@
 const path = require("path");
-const bundler = require("@remotion/bundler");
-const renderer = require("@remotion/renderer");
-const cliProgress = require("cli-progress");
-const axios = require("axios").default;
 const fs = require("fs");
+const { bundle } = require("@remotion/bundler");
+const { getCompositions, renderMedia } = require("@remotion/renderer");
+// const cliSpinners = require("cli-spinners");
+const dotenv = require("dotenv");
+const ora = require("ora");
+const { enableTailwind } = require("./src/webpack-override");
+// const inquirer = require("inquirer");
 
-const { bundle } = bundler;
-const { getCompositions, renderMedia } = renderer;
-const bar1 = new cliProgress.SingleBar({}, cliProgress.Presets.shades_classic);
-bar1.start(100, 0);
+dotenv.config();
 
-const start = async () => {
-  let data;
-  try {
-    const jsonString = fs.readFileSync("./data/quotes/2022-09-07.json");
-    data = JSON.parse(jsonString);
-  } catch (error) {
-    console.error(error.message);
-  }
+const getRandomNumber = (min, max) => {
+  return Math.floor(Math.random() * (max - min + 1) + min);
+};
 
-  const inputProps = {
-    fileData: JSON.stringify(data),
-    musicIndex: 170,
-    videoIndex: 24,
-  };
-  console.log(inputProps);
+const totalAudio = process.env.REMOTION_TOTAL_AUDIO || "1";
+const totalVideo = process.env.REMOTION_TOTAL_VIDEO || "1";
 
-  // The composition you want to render
-  const compositionId = "quotes";
-  // You only have to do this once, you can reuse the bundle.
-  const entry = "./src/index.tsx";
-
-  //   Update progress bar
-  bar1.update(25);
-  console.log(" Creating a Webpack bundle of the video\n");
-
-  const bundleLocation = await bundle(path.resolve(entry), () => undefined, {
-    // If you have a Webpack override, make sure to add it here
-    webpackOverride: (config) => config,
+const renderMediaNode = async ({ composition, serveUrl, outputLocation }) => {
+  const renderSpinner = ora(`Attempting to render: ${outputLocation}`).start();
+  await renderMedia({
+    composition,
+    serveUrl,
+    codec: "h264",
+    outputLocation,
+    inputProps: {
+      musicIndex: getRandomNumber(1, parseInt(totalAudio)),
+      videoIndex: getRandomNumber(1, parseInt(totalVideo)),
+    },
   });
 
-  // Parametrize the video by passing arbitrary props to your component.
+  renderSpinner.succeed();
+};
+
+const start = async () => {
+  // You only have to do this once, you can reuse the bundle.
+  const entry = "./src/index";
+  const createWebpackSpinner = ora(
+    "Creating a Webpack bundle of the video"
+  ).start();
+  const bundleLocation = await bundle(path.resolve(entry), () => undefined, {
+    // If you have a Webpack override, make sure to add it here
+    webpackOverride: enableTailwind,
+  });
+  createWebpackSpinner.succeed();
 
   // Extract all the compositions you have defined in your project
   // from the webpack bundle.
+  const gettingCompositionsSpinner = ora(
+    "Extracting compositions from the bundle"
+  ).start();
   const comps = await getCompositions(bundleLocation);
-  // Select the composition you want to render.
-  const composition = comps.find((c) => c.id === compositionId);
-  // Ensure the composition exists
-  if (!composition) {
-    throw new Error(`No composition with the ID ${compositionId} found.
-  Review "${entry}" for the correct ID.`);
+  gettingCompositionsSpinner.succeed();
+
+  for (const composition of comps) {
+    const outputLocation = `out/${composition.id}.mp4`;
+    await renderMediaNode({
+      composition,
+      serveUrl: bundleLocation,
+      outputLocation,
+    });
   }
-  const outputLocation = `out/${compositionId}-node.mp4`;
-  //   Update progress bar
-  bar1.update(50);
-  console.log(" Attempting to render:", outputLocation, "\n");
-  await renderMedia({
-    composition,
-    serveUrl: bundleLocation,
-    codec: "h264",
-    outputLocation,
-    inputProps,
-  });
-  //   Update progress bar
-  bar1.update(75);
-  bar1.stop();
-  console.log("Render done!");
+
+  console.log("====================================");
+  console.log("All done!");
+  console.log("====================================");
 };
 start();

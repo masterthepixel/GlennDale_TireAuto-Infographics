@@ -7,9 +7,8 @@ import { useMemo } from "react";
 import "./style.css";
 import { getRandom } from "./utils";
 
-export interface xQuotesDataType {
+export interface QuotesDataType {
   q: string;
-  length: string;
   a: string;
   i: string;
   c: string;
