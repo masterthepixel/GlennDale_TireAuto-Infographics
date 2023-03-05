@@ -11,7 +11,7 @@
   "dependencies": {
     "@remotion/cli": "3.2.22",
     "@remotion/eslint-plugin": "^3.2.3",
-    "@remotion/lambda": "3.2.22",
+    "@remotion/lambda": "^3.2.22",
     "animate.css": "^4.1.1",
     "autoprefixer": "^10.4.8",
     "axios": "^0.27.2",
