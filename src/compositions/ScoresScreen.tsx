@@ -103,30 +103,61 @@ function ScoresScreen({
                 />
               </div>
               <div className="relative px-6 mx-auto text-center max-w-7xl lg:px-8">
-                <div className="max-w-md mx-auto ">
-                  <div className="flex items-center justify-between px-6 ">
-                    <div className="flex flex-col p-2 text-xl text-white bg-black rounded-lg">
-                      {" "}
-                      <a
-                        href="#"
-                        className="inline-block px-4 py-5 text-5xl font-bold tracking-tight text-center text-yellow-400 rounded-lg leading-tighter"
-                      >
-                        GLENN DALE TIRE, AUTO & ROADSIDE ASSISTANCE
+                <div className="px-6 mx-auto max-w-7xl lg:px-8">
+        <div className="max-w-2xl mx-auto space-y-16 divide-y divide-gray-100 lg:mx-0 lg:max-w-none">
+          <div className="grid grid-cols-1 gap-y-10 gap-x-8 lg:grid-cols-3">
+            <div>
+              <h2 className="text-2xl font-black tracking-tight text-gray-900"></h2>
+              <p className="mt-4 font-extrabold leading-7 text-yellow-400">
+               GLENN DALE TIRE, AUTO & ROADSIDE ASSISTANCE
+              </p>
+            </div>
+            <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:col-span-2 lg:gap-8">
+
+              <div className="p-10 rounded-2xl bg-gray-50">
+                <h3 className="text-base font-semibold leading-7 text-gray-900">Join our team</h3>
+                <dl className="mt-3 space-y-1 text-sm leading-6 text-gray-600">
+                  <div>
+                    <dt className="sr-only">Email</dt>
+                    <dd>
+                      <a className="font-semibold text-indigo-600" href="mailto:careers@example.com">
+                        careers@example.com
                       </a>
-                      <a
-                        href="#"
-                        className="inline-block px-4 py-6 text-4xl leading-5 tracking-tight font -semibold text-zinc-200"
-                      >
-                        <span aria-hidden="true" className="text-white">
-                          &#128241;{" "}
-                        </span>
-                        (240) 260-3955
-                      </a>
-                    </div>
+                    </dd>
                   </div>
+                  <div className="mt-1">
+                    <dt className="sr-only">Phone number</dt>
+                    <dd>+1 (555) 905-4567</dd>
+                  </div>
+                </dl>
+              </div>
+              <div className="p-10 rounded-2xl bg-gray-50">
+                <h3 className="text-base font-semibold leading-7 text-gray-900">Say hello</h3>
+                <dl className="mt-3 space-y-1 text-sm leading-6 text-gray-600">
+                  <div>
+                    <dt className="sr-only">Email</dt>
+                    <dd>
+                      <a className="font-semibold text-indigo-600" href="mailto:hello@example.com">
+                        hello@example.com
+                      </a>
+                    </dd>
+                  </div>
+                  <div className="mt-1">
+                    <dt className="sr-only">Phone number</dt>
+                    <dd>+1 (555) 905-5678</dd>
+                  </div>
+                </dl>
+              </div>
+            </div>
+          </div>
+          
+        </div>
+      </div>
+                <div className="max-w-xl mx-auto ">
                 </div>
               </div>
             </div>
+            
             <div className="flow-root pb-12 bg-black/50 rounded-b-2xl ">
               <div className="relative -mt-80">
                 <div className="relative z-10 px-6 mx-auto max-w-7xl lg:px-8">
@@ -137,7 +168,7 @@ function ScoresScreen({
                         className="flex flex-col shadow-xl bg-black/90 rounded-3xl ring-1 ring-black/60 ... w-full rounded-2xl bg-gradient-to-r from-red-600 via-white to-yellow-400 p-1"
                       >
                         <div className="p-8 bg-gradient-to-b from-zinc-50 to-gray-200 rounded-xl sm:p-10">
-                          <p className="pb-8 mt-2 font-bold tracking-tight text-transparent bg-clip-text bg-gradient-to-br from-[#1c1c1e] via-[#1c1c1e] to-[#1c1c1e] text-7xl">
+                          <p className="pb-8 mt-2 font-bold tracking-tight text-transparent bg-clip-text bg-gradient-to-br from-[#1c1c1e] via-[#1c1c1e] to-[#1c1c1e] text-6xl">
                             "{data.q}"
                           </p>
                           <div className="flex items-center py-6">
@@ -147,7 +178,7 @@ function ScoresScreen({
                                 alt=""
                                 width={100}
                                 height="100"
-                                className="p-2 rounded-full ring-2 ring-zinc-100"
+                                className="p-2 rounded-full ring-2 ring-zinc-900/60"
                               />
                             </div>
                             <p className="pl-4 text-4xl font-medium text-zinc-800">
