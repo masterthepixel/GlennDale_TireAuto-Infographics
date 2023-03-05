@@ -93,58 +93,48 @@ function ScoresScreen({
       >
         {/* Body */}
         {data ? (
-          <div className="z-10">
+          <div className="z-10 bg-white/90 ">
             <div className="relative overflow-hidden pb-96 rounded-t-3xl">
-              <div className="">
-                <img
-                  className="absolute bottom-0 left-1/2 w-[1440px] max-w-none -translate-x-1/2 opacity-30  "
-                  src="https://tailwindui.com/img/component-images/grid-blur-purple-on-black.jpg"
-                  alt=""
-                />
-              </div>
-              <div className="relative px-6 mx-auto text-center max-w-7xl lg:px-8">
+              
+              <div className="relative p-6 px-12 mx-auto -mt-6 text-center max-w-7xl">
                 <div className="px-6 mx-auto max-w-7xl lg:px-8">
-        <div className="max-w-2xl mx-auto space-y-16 divide-y divide-gray-100 lg:mx-0 lg:max-w-none">
+        <div className="max-w-2xl mx-auto mt-8 space-y-16 divide-y divide-gray-100 lg:mx-0 lg:max-w-none">
           <div className="grid grid-cols-1 gap-y-10 gap-x-8 lg:grid-cols-3">
             <div>
-              <h2 className="font-black tracking-tight text-gray-900"></h2>
-              <p className="mt-4 text-2xl font-extrabold leading-7 text-yellow-400">
-               GLENN DALE TIRE, AUTO & ROADSIDE ASSISTANCE
-              </p>
+              <h1>
+                
+                <span className="block font-bold leading-10 text-left mt-7">
+                  <span className="block text-zinc-900 text-[46px] tracking-tighter">GLENN DALE</span>
+                  <span className="block text-[42px] font-bold text-transparent bg-clip-text bg-gradient-to-t from-blue-500 to-blue-600">TIRE, AUTO & ROADSIDE ASSISTANCE</span>
+                </span>
+              </h1>
             </div>
-            <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:col-span-2 lg:gap-8">
+            
+            <div className="grid grid-cols-1 gap-6 mt-4 sm:grid-cols-2 lg:col-span-2 lg:gap-8">
 
-              <div className="p-10 rounded-2xl bg-gray-50">
-                <h3 className="text-base font-semibold leading-7 text-gray-900">Join our team</h3>
-                <dl className="mt-3 space-y-1 text-sm leading-6 text-gray-600">
+              <div className="p-10 text-right shadow-xl rounded-3xl bg-zinc-50 ring-1 ring-inset ring-gray-900/50">
+                <h3 className="text-base font-semibold leading-7 text-blue-600">Address &#128664;</h3>
+                <dl className="mt-3 space-y-1 text-sm leading-6 ">
                   <div>
-                    <dt className="sr-only">Email</dt>
+                    <dt className="sr-only">Address</dt>
                     <dd>
-                      <a className="font-semibold text-indigo-600" href="mailto:careers@example.com">
-                        careers@example.com
+                      <a className="text-xl font-semibold text-zinc-600" href="mailto:careers@example.com">
+                      11900 Annapolis Rd, Glenn Dale, MD
                       </a>
                     </dd>
-                  </div>
-                  <div className="mt-1">
-                    <dt className="sr-only">Phone number</dt>
-                    <dd>+1 (555) 905-4567</dd>
                   </div>
                 </dl>
               </div>
-              <div className="p-10 rounded-2xl bg-gray-50">
-                <h3 className="text-base font-semibold leading-7 text-gray-900">Say hello</h3>
-                <dl className="mt-3 space-y-1 text-sm leading-6 text-gray-600">
+              <div className="p-10 text-right shadow-xl rounded-3xl bg-zinc-50 ring-1 ring-inset ring-zinc-900/50">
+                <h3 className="text-base font-semibold leading-7 text-blue-600">Call Us &#128241;</h3>
+                <dl className="mt-3 space-y-1 text-xl leading-6 text-gray-600">
                   <div>
-                    <dt className="sr-only">Email</dt>
+                    <dt className="sr-only">Call Us</dt>
                     <dd>
-                      <a className="font-semibold text-indigo-600" href="mailto:hello@example.com">
-                        hello@example.com
+                      <a className="text-2xl font-semibold text-zinc-600" href="mailto:hello@example.com">
+                      (240) 260-3955
                       </a>
                     </dd>
-                  </div>
-                  <div className="mt-1">
-                    <dt className="sr-only">Phone number</dt>
-                    <dd>+1 (555) 905-5678</dd>
                   </div>
                 </dl>
               </div>
@@ -158,20 +148,20 @@ function ScoresScreen({
               </div>
             </div>
             
-            <div className="flow-root pb-12 bg-black/50 rounded-b-2xl ">
+            <div className="flow-root pb-12 -mt-14 rounded-b-2xl ">
               <div className="relative -mt-80">
                 <div className="relative z-10 px-6 mx-auto max-w-7xl lg:px-8">
                   <div className="grid max-w-md grid-cols-1 gap-8 mx-auto lg:max-w-4xl lg:gap-8">
                     {tiers.map((tier) => (
                       <div
                         key={tier.name}
-                        className="flex flex-col shadow-xl bg-black/90 rounded-3xl ring-1 ring-black/60 ... w-full rounded-2xl bg-gradient-to-r from-red-600 via-white to-yellow-400 p-1"
+                        className="flex flex-col shadow-xl rounded-3xl ... w-full rounded-2xl bg-gradient-to-r from-red-600/90 via-amber-500/90 to-yellow-400/80 p-2"
                       >
-                        <div className="p-8 bg-gradient-to-b from-zinc-50 to-gray-200 rounded-xl sm:p-10">
-                          <p className="pb-8 mt-2 font-bold tracking-tight text-transparent bg-clip-text bg-gradient-to-br from-[#1c1c1e] via-[#1c1c1e] to-[#1c1c1e] text-6xl">
+                        <div className="p-8 bg-gradient-to-r from-gray-100 to-gray-300 rounded-2xl sm:p-10">
+                          <p className="pb-8 mt-2 font-bold tracking-tight text-black text-7xl ">
                             "{data.q}"
                           </p>
-                          <div className="flex items-center py-6">
+                          <div className="flex items-center">
                             <div>
                               <Img
                                 src={data.i}
@@ -181,7 +171,7 @@ function ScoresScreen({
                                 className="p-2 rounded-full ring-2 ring-zinc-900/60"
                               />
                             </div>
-                            <p className="pl-4 text-4xl font-medium text-zinc-800">
+                            <p className="pl-4 -mt-2 text-4xl font-medium text-zinc-700">
                               {data.a}
                             </p>
                           </div>
@@ -196,12 +186,12 @@ function ScoresScreen({
                   <div className="flex flex-row flex-wrap -mx-2">
                     <div className="relative w-full h-56 px-2 mb-4 md:w-1/2 md:h-auto ... ">
                       <a
-                        className="block w-full h-full pt-4 pl-4 text-[18px] tracking-wider bg-center bg-no-repeat bg-cover ... ring-4 ring-zinc-900 rounded-2xl text-gray-50 bg-zinc-100 font-medium shadow-xl "
+                        className="block w-full h-full pt-4 pl-4 text-[20px] tracking-wider bg-center bg-no-repeat bg-cover ... ring-4 ring-zinc-900 rounded-2xl text-gray-50 bg-zinc-100 font-medium shadow-xl "
                         href="#"
                         title="Link"
                         style={{ backgroundImage: `url(${tireImage})` }}
                       >
-                        <span className="absolute px-3 py-2 bg-zinc-900/70 bottom-2 left-4 rounded-xl">
+                        <span className="absolute px-3 py-2 bg-zinc-900/90 bottom-2 left-4 rounded-xl">
                           Tire Services
                         </span>
                       </a>
@@ -210,24 +200,24 @@ function ScoresScreen({
                       <div className="flex flex-col -mx-2 sm:flex-row md:flex-col">
                         <div className="relative w-full h-48 px-2 mb-4 sm:w-1/2 md:w-full xl:h-32 sm:mb-0 md:mb-4">
                           <a
-                            className="block w-full h-full bg-center bg-no-repeat bg-cover bg-zinc-100 ... ring-4  pt-4 pl-4 text-gray-50 text-[18px]  tracking-wider ring-yellow-400/80 rounded-xl font-medium shadow-xl  "
+                            className="block w-full h-full bg-center bg-no-repeat bg-cover bg-zinc-100 ... ring-4  pt-4 pl-4 text-gray-50 text-[20px]  tracking-wider ring-yellow-400/80 rounded-xl font-medium shadow-xl  "
                             href="#"
                             title="Link"
                             style={{ backgroundImage: `url(${brakeImage})` }}
                           >
-                            <span className="absolute px-3 py-2 bg-zinc-900/70 bottom-2 left-4 rounded-xl">
+                            <span className="absolute px-3 py-2 bg-zinc-900/90 bottom-2 left-4 rounded-xl">
                               Brake Services
                             </span>
                           </a>
                         </div>
                         <div className="relative w-full h-48 px-2 sm:w-1/2 md:w-full xl:h-32">
                           <a
-                            className="block w-full h-full bg-center bg-no-repeat bg-cover bg-zinc-100 ... pt-4 pl-4 text-gray-50 text-[18px]  tracking-wider ring-4 ring-white/70 rounded-xl font-medium shadow-xl "
+                            className="block w-full h-full bg-center bg-no-repeat bg-cover bg-zinc-100 ... pt-4 pl-4 text-gray-50 text-[20px]  tracking-wider ring-4 ring-orange-600/70 rounded-xl font-medium shadow-xl "
                             href="#"
                             title="Link"
                             style={{ backgroundImage: `url(${celImage})` }}
                           >
-                            <span className="absolute px-3 py-2 bg-zinc-900/70 bottom-2 left-4 rounded-xl">
+                            <span className="absolute px-3 py-2 bg-zinc-900/90 bottom-2 left-4 rounded-xl">
                               Engine Diagnostics
                             </span>
                           </a>
@@ -236,36 +226,36 @@ function ScoresScreen({
                     </div>
                     <div className="relative w-full px-2 mb-4 sm:w-1/3 md:h-42 sm:mb-0 ">
                       <a
-                        className="block w-full h-full bg-center bg-no-repeat bg-cover bg-zinc-100 ... pt-4 pl-4 text-gray-50 text-[18px] ring-4 tracking-wider ring-yellow-400/80 rounded-xl font-medium shadow-xl "
+                        className="block w-full h-full bg-center bg-no-repeat bg-cover bg-zinc-100 ... pt-4 pl-4 text-gray-50 text-[20px] ring-4 tracking-wider ring-yellow-400/80 rounded-xl font-medium shadow-xl "
                         href="#"
                         title="Link"
                         style={{ backgroundImage: `url(${suspensionImage})` }}
                       >
-                        <span className="absolute px-3 py-2 bg-zinc-900/70 bottom-2 left-4 rounded-xl">
+                        <span className="absolute px-3 py-2 bg-zinc-900/90 bottom-2 left-4 rounded-xl">
                           SUSPENSION SERVICES
                         </span>
                       </a>
                     </div>
                     <div className="relative w-full px-2 mb-4 sm:w-1/3 md:h-42 sm:mb-0 ">
                       <a
-                        className="block w-full h-full bg-center bg-no-repeat bg-cover bg-zinc-100 ... pt-4 pl-4 text-gray-50 text-[18px] ring-4 tracking-wider ring-red-600/90 rounded-xl font-medium shadow-xl "
+                        className="block w-full h-full bg-center bg-no-repeat bg-cover bg-zinc-100 ... pt-4 pl-4 text-gray-50 text-[20px] ring-4 tracking-wider ring-red-600/90 rounded-xl font-medium shadow-xl "
                         href="#"
                         title="Link"
                         style={{ backgroundImage: `url(${batteryImage})` }}
                       >
-                        <span className="absolute px-3 py-2 bg-zinc-900/70 bottom-2 left-4 rounded-xl">
+                        <span className="absolute px-3 py-2 bg-zinc-900/90 bottom-2 left-4 rounded-xl">
                           BATTERY SERVICES
                         </span>
                       </a>
                     </div>
                     <div className="relative w-full px-2 sm:w-1/3 md:h-48 ">
                       <a
-                        className="block w-full h-full bg-center bg-no-repeat bg-cover bg-zinc-100 ... pt-4 pl-4 text-gray-50 text-[18px] ring-4 tracking-wider ring-zinc-900/50 rounded-xl font-medium shadow-xl "
+                        className="block w-full h-full bg-center bg-no-repeat bg-cover bg-zinc-100 ... pt-4 pl-4 text-gray-50 text-[20px] ring-4 tracking-wider ring-zinc-900/50 rounded-xl font-medium shadow-xl "
                         href="#"
                         title="Link"
                         style={{ backgroundImage: `url(${emergencyImage})` }}
                       >
-                        <span className="absolute px-3 py-2 bg-zinc-900/70 bottom-2 left-4 rounded-xl">
+                        <span className="absolute px-3 py-2 bg-zinc-900/90 bottom-2 left-4 rounded-xl">
                           ROAD SIDE ASSISTANCE
                         </span>
                       </a>
