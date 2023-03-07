@@ -132,6 +132,7 @@ const main = async () => {
           videoIndex: getRandomNumber(1, parseInt(totalVideo)),
         },
         outName,
+        logLevel: "verbose",
       });
 
       log(chalk.green(`Render started. \nRender ID: `), renderId);
@@ -149,6 +150,13 @@ const main = async () => {
         if (progress.done) {
           renderProgressSpinner.succeed("Rendering" + chalk.green(" - Done"));
           log("Render finished!", progress.outputFile);
+          log(
+            progress.timeToFinish / 1000,
+            "s,",
+            " Estimated cost ",
+            progress.costs.currency,
+            progress.costs.displayCost
+          );
           break;
         }
         if (progress.fatalErrorEncountered) {
