@@ -8,6 +8,7 @@ import celImage from "../../public/images/check-engine.png";
 import suspensionImage from "../../public/images/suspension.png";
 import batteryImage from "../../public/images/battery.jpeg";
 import emergencyImage from "../../public/images/emergency-roadside-assistance.jpg";
+import { GiGps, FcPhoneAndroid } from "react-icons";
 
 // import 'animate.css';
 const tiers = [
@@ -112,7 +113,7 @@ function ScoresScreen({
                         
                         <div className="grid grid-cols-1 gap-6 pl-8 mt-4 sm:grid-cols-2 lg:col-span-2 lg:gap-8">
                           <div className="p-8 text-right bg-white shadow-xl rounded-2xl ring-1 ring-inset ring-gray-900/50">
-                            <h3 className="text-xl font-semibold leading-7 text-zinc-900">Address  &#128664;</h3>
+                            <h3 className="text-xl font-semibold leading-7 text-zinc-900">Address  &#128664;</h3><FcPhoneAndroid>Address</FcPhoneAndroid>
                             <dl className="mt-3 space-y-1 text-sm leading-6 ">
                               <div>
                                 <dt className="sr-only">Address</dt>
@@ -125,7 +126,7 @@ function ScoresScreen({
                             </dl>
                           </div>
                           <div className="p-8 text-right bg-white shadow-xl rounded-2xl ring-1 ring-inset ring-zinc-900/50">
-                            <h3 className="text-xl font-semibold leading-7 text-zinc-900">Call Us &#128241;</h3>
+                            <h3 className="text-xl font-semibold leading-7 text-zinc-900">Call Us &#128241;</h3><GiGps>Call Us </GiGps>
                             <dl className="mt-3 space-y-1 text-xl leading-6 text-gray-600">
                               <div>
                                 <dt className="sr-only">Call Us</dt>
