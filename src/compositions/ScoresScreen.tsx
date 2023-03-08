@@ -8,7 +8,8 @@ import celImage from "../../public/images/check-engine.png";
 import suspensionImage from "../../public/images/suspension.png";
 import batteryImage from "../../public/images/battery.jpeg";
 import emergencyImage from "../../public/images/emergency-roadside-assistance.jpg";
-import { GiGps, FcPhoneAndroid } from "react-icons";
+import { GiGps } from "react-icons/gi";
+import { FcPhoneAndroid } from "react-icons/fc";
 
 // import 'animate.css';
 const tiers = [
@@ -96,58 +97,76 @@ function ScoresScreen({
         {data ? (
           <div className="z-10 bg-white/75 backdrop-filter backdrop-blur-lg backdrop-opacity-75 rounded-3xl">
             <div className="relative overflow-hidden pb-96">
-              
               <div className="relative p-6 px-4 mx-auto -mt-6 text-center">
-                  <div className="px-6 mx-auto lg:px-8">
-                    <div className="max-w-2xl mx-auto mt-8 space-y-16 divide-y divide-gray-100 lg:mx-0 lg:max-w-none">
-                      <div className="grid grid-cols-1 gap-y-10 gap-x-0 lg:grid-cols-3">
-                        <div>
-                          <h1>
-                            
-                            <span className="block font-bold leading-10 text-left mt-7">
-                              <span className="block text-zinc-900 text-[46px] tracking-normal font-bold">GLENN DALE</span>
-                              <span className="mt-1 block text-[42px] font-bold text-transparent bg-clip-text bg-gradient-to-t from-blue-500 to-blue-600 tracking-wider leading-10">TIRE, AUTO & ROADSIDE ASSISTANCE</span>
+                <div className="px-6 mx-auto lg:px-8">
+                  <div className="max-w-2xl mx-auto mt-8 space-y-16 divide-y divide-gray-100 lg:mx-0 lg:max-w-none">
+                    <div className="grid grid-cols-1 gap-y-10 gap-x-0 lg:grid-cols-3">
+                      <div>
+                        <h1>
+                          <span className="block font-bold leading-10 text-left mt-7">
+                            <span className="block text-zinc-900 text-[46px] tracking-normal font-bold">
+                              GLENN DALE
                             </span>
-                          </h1>
-                        </div>
-                        
-                        <div className="grid grid-cols-1 gap-6 pl-8 mt-4 sm:grid-cols-2 lg:col-span-2 lg:gap-8">
-                          <div className="p-8 text-right bg-white shadow-xl rounded-2xl ring-1 ring-inset ring-gray-900/50">
-                            <h3 className="text-xl font-semibold leading-7 text-zinc-900">Address  &#128664;</h3><FcPhoneAndroid>Address</FcPhoneAndroid>
-                            <dl className="mt-3 space-y-1 text-sm leading-6 ">
-                              <div>
-                                <dt className="sr-only">Address</dt>
-                                <dd>
-                                  <a className="text-[22px] font-medium tracking-tighter text-blue-700" href="mailto:careers@example.com">
+                            <span className="mt-1 block text-[42px] font-bold text-transparent bg-clip-text bg-gradient-to-t from-blue-500 to-blue-600 tracking-wider leading-10">
+                              TIRE, AUTO & ROADSIDE ASSISTANCE
+                            </span>
+                          </span>
+                        </h1>
+                      </div>
+
+                      <div className="grid grid-cols-1 gap-6 pl-8 mt-4 sm:grid-cols-2 lg:col-span-2 lg:gap-8">
+                        <div className="p-8 text-right bg-white shadow-xl rounded-2xl ring-1 ring-inset ring-gray-900/50">
+                          <div className="flex justify-end items-center gap-4">
+                            <h3 className="text-xl font-semibold leading-7 text-zinc-900">
+                              Address
+                            </h3>
+                            <GiGps size="2rem" />
+                          </div>
+
+                          <dl className="mt-3 space-y-1 text-sm leading-6 ">
+                            <div>
+                              <dt className="sr-only">Address</dt>
+                              <dd>
+                                <a
+                                  className="text-[22px] font-medium tracking-tighter text-blue-700"
+                                  href="mailto:careers@example.com"
+                                >
                                   11900 Annapolis Rd, Glenn Dale, MD
-                                  </a>
-                                </dd>
-                              </div>
-                            </dl>
+                                </a>
+                              </dd>
+                            </div>
+                          </dl>
+                        </div>
+                        <div className="p-8 text-right bg-white shadow-xl rounded-2xl ring-1 ring-inset ring-zinc-900/50">
+                          <div className="flex justify-end items-center gap-4">
+                            <h3 className="text-xl font-semibold leading-7 text-zinc-900">
+                              Call Us
+                            </h3>
+                            <FcPhoneAndroid size="2rem" />
                           </div>
-                          <div className="p-8 text-right bg-white shadow-xl rounded-2xl ring-1 ring-inset ring-zinc-900/50">
-                            <h3 className="text-xl font-semibold leading-7 text-zinc-900">Call Us &#128241;</h3><GiGps>Call Us </GiGps>
-                            <dl className="mt-3 space-y-1 text-xl leading-6 text-gray-600">
-                              <div>
-                                <dt className="sr-only">Call Us</dt>
-                                <dd>
-                                  <a className="text-[23px] font-semibold text-blue-700" href="mailto:hello@example.com">
+
+                          <dl className="mt-3 space-y-1 text-xl leading-6 text-gray-600">
+                            <div>
+                              <dt className="sr-only">Call Us</dt>
+                              <dd>
+                                <a
+                                  className="text-[23px] font-semibold text-blue-700"
+                                  href="mailto:hello@example.com"
+                                >
                                   (240) 260-3955
-                                  </a>
-                                </dd>
-                              </div>
-                            </dl>
-                          </div>
+                                </a>
+                              </dd>
+                            </div>
+                          </dl>
                         </div>
                       </div>
-                      
                     </div>
                   </div>
-                  <div className="max-w-xl mx-auto ">
-                  </div>
                 </div>
+                <div className="max-w-xl mx-auto "></div>
               </div>
-            
+            </div>
+
             <div className="flow-root pb-12 -mt-14 rounded-b-2xl ">
               <div className="relative -mt-80">
                 <div className="relative z-10 px-6 mx-auto max-w-7xl lg:px-8">
