@@ -105,7 +105,7 @@ function ScoresScreen({
                         <h1>
                           <span className="block font-bold leading-10 text-left mt-7">
                             <span className="block text-zinc-900 text-[46px] tracking-normal font-bold">
-                              GLENN DALE
+                              GLENNn DALE
                             </span>
                             <span className="mt-1 block text-[42px] font-bold text-transparent bg-clip-text bg-gradient-to-t from-blue-500 to-blue-600 tracking-wider leading-10">
                               TIRE, AUTO & ROADSIDE ASSISTANCE
@@ -116,7 +116,7 @@ function ScoresScreen({
 
                       <div className="grid grid-cols-1 gap-6 pl-8 mt-4 sm:grid-cols-2 lg:col-span-2 lg:gap-8">
                         <div className="p-8 text-right bg-white shadow-xl rounded-2xl ring-1 ring-inset ring-gray-900/50">
-                          <div className="flex justify-end items-center gap-4">
+                          <div className="flex items-center justify-end gap-4">
                             <h3 className="text-xl font-semibold leading-7 text-zinc-900">
                               Address
                             </h3>
@@ -138,7 +138,7 @@ function ScoresScreen({
                           </dl>
                         </div>
                         <div className="p-8 text-right bg-white shadow-xl rounded-2xl ring-1 ring-inset ring-zinc-900/50">
-                          <div className="flex justify-end items-center gap-4">
+                          <div className="flex items-center justify-end gap-4">
                             <h3 className="text-xl font-semibold leading-7 text-zinc-900">
                               Call Us
                             </h3>
