@@ -11,7 +11,7 @@ export interface QuotesDataType {
   q: string;
   a: string;
   i: string;
-  c: string;
+  c: number;
   id: string;
   h: string;
 }
