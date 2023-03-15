@@ -171,7 +171,9 @@ const main = async () => {
     const gettingAllCompositionsSpinner = ora(
       "Getting all compositions id"
     ).start();
-    const comps = await getCompositions(serveUrl);
+    const comps = await getCompositions(serveUrl, {
+      timeoutInMilliseconds: 60000,
+    });
     gettingAllCompositionsSpinner.succeed(
       "Getting all compositions id" + chalk.green(" - Done")
     );
