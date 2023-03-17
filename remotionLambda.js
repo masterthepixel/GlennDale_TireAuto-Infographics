@@ -9,12 +9,12 @@ const {
   getOrCreateBucket,
   deploySite,
   getFunctions,
-  getSites,
-  renderMediaOnLambda,
   getRenderProgress,
 } = require("@remotion/lambda");
+const { renderMediaOnLambda, getSites } = require("@remotion/lambda/client");
 const { getCompositions } = require("@remotion/renderer");
 const { enableTailwind } = require("./src/webpack-override");
+const { delayRender } = require("remotion");
 
 dotenv.config();
 const log = console.log;
@@ -133,6 +133,7 @@ const main = async () => {
         },
         outName,
         logLevel: "verbose",
+        timeoutInMilliseconds: 50000,
       });
 
       log(chalk.green(`Render started. \nRender ID: `), renderId);
@@ -172,8 +173,9 @@ const main = async () => {
       "Getting all compositions id"
     ).start();
     const comps = await getCompositions(serveUrl, {
-      timeoutInMilliseconds: 60000,
+      timeoutInMilliseconds: 50000,
     });
+    // delayRender("Fetching data from API...");
     gettingAllCompositionsSpinner.succeed(
       "Getting all compositions id" + chalk.green(" - Done")
     );
@@ -193,10 +195,12 @@ const main = async () => {
     if (renderAllPrompt.answear.toLowerCase() !== "all") {
       const composition = renderAllPrompt.answear;
       const outName = `${composition}-${moment().format("M-D-Y")}.mp4`;
+      await new Promise((resolve) => setTimeout(resolve, 500));
       await renderMedia(composition, outName);
     } else {
       for (const composition of comps) {
         const outName = `${composition.id}-${moment().format("M-D-Y")}.mp4`;
+        await new Promise((resolve) => setTimeout(resolve, 500));
         await renderMedia(composition.id, outName);
       }
     }
