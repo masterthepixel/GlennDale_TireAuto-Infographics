@@ -73,7 +73,7 @@ export const RemotionVideo: React.FC = () => {
         ? data.map((item, index) => (
             <Composition
               key={index}
-              id={`video${index}`}
+              id={item.id.replaceAll("_", "")}
               component={ScoresScreen}
               durationInFrames={450}
               fps={30}
