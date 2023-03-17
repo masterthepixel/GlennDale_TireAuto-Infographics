@@ -71,18 +71,16 @@ export const RemotionVideo: React.FC = () => {
     <>
       {data
         ? data.map((item, index) => (
-            <>
-              {/* {console.log(item.q.toLowerCase().split(" ").join("-"))} */}
-              <Composition
-                id={`quotes-${index}`}
-                component={ScoresScreen}
-                durationInFrames={450}
-                fps={30}
-                width={1080}
-                height={1920}
-                defaultProps={{ data: item, musicIndex, videoIndex }}
-              />
-            </>
+            <Composition
+              key={index}
+              id={`video${index}`}
+              component={ScoresScreen}
+              durationInFrames={450}
+              fps={30}
+              width={1080}
+              height={1920}
+              defaultProps={{ data: item, musicIndex, videoIndex }}
+            />
           ))
         : null}
     </>
