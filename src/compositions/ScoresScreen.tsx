@@ -1,15 +1,7 @@
 import { useEffect, useState } from "react";
 import { AbsoluteFill, Audio, Img, staticFile, Video } from "remotion";
 import { QuotesDataType } from "../Video";
-import { FaChevronLeft } from "react-icons/fa";
-import tireImage from "../../public/images/ace9929d452a56633ae7badbe9ebd60fx-1.png";
-import brakeImage from "../../public/images/brake-repair-2.png";
-import celImage from "../../public/images/check-engine.png";
-import suspensionImage from "../../public/images/suspension.png";
-import batteryImage from "../../public/images/battery.jpeg";
-import emergencyImage from "../../public/images/emergency-roadside-assistance.jpg";
-import { GiGps } from "react-icons/gi";
-import { FcPhoneAndroid } from "react-icons/fc";
+
 
 // import 'animate.css';
 const tiers = [
@@ -100,7 +92,7 @@ function ScoresScreen({
             <div className="flex items-center px-8 mx-auto">
                             <div>
                               <Img
-                                src={data.i}
+                                src={staticFile(`/images/logo.webp`)}
                                 alt=""
                                 width={250}
                                 height="250"
