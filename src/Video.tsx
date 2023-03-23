@@ -48,7 +48,7 @@ export const RemotionVideo: React.FC = () => {
 
   // Generate random background video index
   const generateRandomVideoIndex = useCallback(() => {
-    let number = getRandom(1, 25);
+    let number = getRandom(1, 33);
     settingValues(VIDEO_INDEX, setVideoIndex, number);
   }, [handle]);
 
@@ -76,7 +76,7 @@ export const RemotionVideo: React.FC = () => {
               id={item.id.replaceAll("_", "")}
               component={ScoresScreen}
               durationInFrames={450}
-              fps={30}
+              fps={24}
               width={1080}
               height={1920}
               defaultProps={{ data: item, musicIndex, videoIndex }}

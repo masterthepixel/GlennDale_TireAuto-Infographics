@@ -114,8 +114,8 @@ function ScoresScreen({
                         className="flex flex-col shadow-xl rounded-3xl ... w-full bg-gradient-to-br from-red-800/90 via-zinc-100 to-blue-800/80 p-2 "
                       >
                         <div className="p-8 bg-gradient-to-br from-black via-zinc-900 to-gray-900 rounded-2xl sm:p-10">
-                          <p className="pb-8 mt-2 text-5xl font-bold leading-[1.25] tracking-tight text-yellow-400">
-                            "{data.q}"
+                          <p className="pb-8 mt-2 text-6xl font-bold leading-[1.25] tracking-tight text-yellow-400">
+                            {data.q}
                           </p>
                           <p className="max-w-sm text-3xl font-medium text-left text-zinc-50">
                               - {data.a}
